@@ -1,0 +1,160 @@
+@import "/src/sass/base";
+
+/* === Flex Row Utility === */
+.u-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Allows form elements to wrap on smaller screens */
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === Inputs for Date & Select === */
+.u-row input[type="date"],
+.u-row select {
+  background-color: lighten($background-color-primary, 8%);
+  border: 1px solid darken($background-color-primary, 15%);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $font-color-secondary;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $font-color-primary;
+    box-shadow: 0 0 0 3px rgba($font-color-primary, 0.2);
+  }
+
+  &::placeholder {
+    color: $font-color-secondary;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* === Primary Button: Find Table === */
+.button-find-table {
+  background-color: $font-color-primary;
+  color: $background-color-light;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  &:hover {
+    background-color: darken($font-color-primary, 8%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+
+/* === Secondary Buttons (e.g. Date Selectors) === */
+.button-select-date {
+  font-size: 1.6rem;
+  background-color: $font-color-primary;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($font-color-primary, 10%);
+    transform: translateY(-1px);
+  }
+
+  &--faded {
+    opacity: 0.25;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* === Popup Error (for error handling) === */
+.error-popup {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: red;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  &__close {
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: darken(red, 10%);
+    }
+  }
+}
+
+/* === Date Input and Select Input Styles === */
+input[type="date"] {
+  min-width: 180px;
+}
+
+select {
+  min-width: 150px;
+  text-align: center;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 600px) {
+  .u-row {
+    gap: 1rem;
+  }
+
+  .button-find-table {
+    width: 80%;
+  }
+
+  .button-select-date {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+  }
+}

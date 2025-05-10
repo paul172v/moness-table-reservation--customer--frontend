@@ -1,0 +1,259 @@
+@import "/src/sass/base";
+
+/*---------------------------------
+  1) Typography & Headings
+----------------------------------*/
+.almost-there,
+.heading {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-align: center;
+  color: $font-color-primary;
+  font-family: "Georgia", serif;
+  line-height: 1.4;
+}
+
+.booking {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Georgia", serif;
+  color: $font-color-secondary;
+}
+
+/*---------------------------------
+  2) Info Panel
+----------------------------------*/
+.info {
+  margin: 2rem auto;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  background: $background-color-light;
+  padding: 2rem;
+  border-left: 5px solid $font-color-primary;
+  border-radius: 10px;
+  box-shadow: $shadow-soft;
+  max-width: 800px;
+  color: $font-color-primary--dark;
+
+  strong {
+    color: $font-color-primary;
+  }
+}
+
+/*---------------------------------
+  3) Form Layout
+----------------------------------*/
+.form {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: $background-color-primary;
+  border-radius: 12px;
+  border: 1px solid $border-color-default;
+  box-shadow: $shadow-medium;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+
+  select,
+  input,
+  textarea {
+    font-size: 1.6rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    color: $font-color-primary--dark;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-color: $font-color-primary;
+      box-shadow: 0 0 4px rgba($font-color-primary, 0.3);
+    }
+  }
+}
+
+/*---------------------------------
+  3.1 Grid Positioning
+----------------------------------*/
+#first-name,
+#tel,
+#occasion {
+  grid-column: 1 / 2;
+}
+
+#last-name,
+#email,
+#requests {
+  grid-column: 2 / 3;
+}
+
+/*---------------------------------
+  3.2 Terms & Conditions
+----------------------------------*/
+#terms {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  grid-column: 1 / 3;
+  border-radius: 8px;
+  background: #f1f1f1;
+  padding: 1rem;
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: $font-color-primary;
+  }
+
+  strong {
+    font-weight: 700;
+    color: $font-color-primary;
+  }
+}
+
+/*---------------------------------
+  3.3 Submit Button
+----------------------------------*/
+#button-submit {
+  font-size: 1.8rem;
+  background-color: $button-color-primary;
+  color: $font-color-tertiary;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  grid-column: 1 / 3;
+  justify-self: center;
+  align-self: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: darken($button-color-primary, 10%);
+    transform: translateY(-1px);
+  }
+}
+
+/*---------------------------------
+  3.4 Responsive Form
+----------------------------------*/
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  #first-name,
+  #last-name,
+  #tel,
+  #email,
+  #occasion,
+  #requests,
+  #terms,
+  #button-submit {
+    grid-column: 1 / 2;
+  }
+
+  #terms {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #button-submit {
+    width: 100%;
+  }
+}
+
+/*---------------------------------
+  4) Popup Overlay & Box
+----------------------------------*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup,
+.popup-success {
+  background-color: $background-color-light;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: $shadow-medium;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: $font-color-primary;
+  }
+
+  .close-btn {
+    background-color: $button-color-primary;
+    color: $font-color-tertiary;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($button-color-primary, 10%);
+    }
+
+    @media (max-width: 600px) {
+      font-size: 1.6rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+}
+
+.popup-success {
+  background-color: lighten($font-color-primary, 45%);
+
+  p {
+    color: $font-color-primary--dark;
+  }
+}
+
+/*---------------------------------
+  5) Back Button
+----------------------------------*/
+#button-back {
+  background-color: $button-color-primary;
+  color: $background-color-light;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2rem auto 0 auto;
+  display: block;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($button-color-primary, 10%);
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+/************************************************************************************
+ * Moness Brand Color Palette
+ * Use this file to manage all global color variables
+ ************************************************************************************/
+
+/*==============================
+  Background Colors
+==============================*/
+$background-color-primary: rgb(255, 255, 255); // White
+$background-color-secondary: rgb(41, 41, 41); // Deep Grey
+$background-color-dark: rgb(41, 41, 41); // Deep Grey
+
+/* Optional Light Background for Forms / Cards */
+$background-color-light: rgb(255, 255, 255);
+
+/*==============================
+  Font Colors
+==============================*/
+$font-color-primary: rgb(3, 87, 58); // Standard body text
+$font-color-primary--dark: rgb(12, 12, 12); // Standard body text
+$font-color-secondary: rgb(3, 87, 58); // Moness Green (accent headings)
+$font-color-tertiary: rgb(255, 255, 255); // White (on dark backgrounds)
+
+/*==============================
+  Button Colors
+==============================*/
+$button-color-primary: rgb(3, 87, 58); // Moness Green
+$button-color-primary--faded: rgba(3, 87, 58, 0.5);
+$button-color-secondary: rgb(
+  2,
+  61,
+  40
+); // Darker green (used on hover or secondary buttons)
+
+/*==============================
+  Additional Helpers (Optional)
+==============================*/
+// Shadows, borders, etc.
+$border-color-default: #dddddd;
+$shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+$shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// Color utility aliases
+$color-success: #4caf50;
+$color-warning: #ff9800;
+$color-error: #f44336;
